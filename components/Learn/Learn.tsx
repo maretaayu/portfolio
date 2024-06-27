@@ -16,10 +16,14 @@ function Learn({ LearnItems }: LearnProps) {
             <p className="text-lg font-light text-ink">
               Dive into my step-by-step tutorials and exclusive courses designed
               to enhance your skills in UI/UX design and front-end development.
-              Start transforming your creativity into real-world projects today!
             </p>
           </div>
-          <Button variant="secondary">View all</Button>
+          <Button
+            variant="secondary"
+            href="https://www.youtube.com/@maretacodes2940/videos"
+          >
+            View all
+          </Button>
         </div>
         <div className="grid gap-8 md:grid-cols-3 mt-8">
           {LearnItems.map((item, index) => (
