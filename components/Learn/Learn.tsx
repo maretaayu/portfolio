@@ -13,7 +13,7 @@ function Learn({ LearnItems }: LearnProps) {
         <div className="flex gap-4 items-center">
           <div className="flex-1 gap-6 grid">
             <h2 className="text-3xl font-bold text-ink ">Learn with Mareta</h2>
-            <p className="text-lg font-light text-ink">
+            <p className="text-lg font-light text-ink w-full md:w-9/12">
               Dive into my step-by-step tutorials and exclusive courses designed
               to enhance your skills in UI/UX design and front-end development.
             </p>
