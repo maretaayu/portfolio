@@ -3,7 +3,7 @@ import { Label } from "../Label";
 
 function Hero() {
   return (
-    <div className="page-center grid grid-cols-3 items-center md:py-44 py-32 ">
+    <div className="page-center grid grid-cols-3 items-center md:py-44 pt-32 pb-12 ">
       <div className="grid col-span-2 gap-6 ">
         <Label label="Meet Mareta" />
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-ink md:text-5xl lg:text-6xl dark:text-white">
