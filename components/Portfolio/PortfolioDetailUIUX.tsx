@@ -8,7 +8,7 @@ function PortfolioDetailUIUX() {
   const router = useRouter();
   const portfolioItems: CardProps[] = [
     {
-      banner: "/images/PortfolioLoyaltySummit.png",
+      banner: "/images/PortfolioLoyaltysummitid.png",
       title: "Loyalty Summit",
       description: "Game changing event for loyalty industry from Usetada.",
       alt: "Loyalty Summit",
