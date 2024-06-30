@@ -18,6 +18,7 @@ module.exports = {
       accentDark: "#0E183B",
       ink: "#333",
       subtle: "#FAFAFA",
+      border: "#E5E5E5",
       blue: {
         0: "#2eb5c0",
         200: "#99c9ed",
