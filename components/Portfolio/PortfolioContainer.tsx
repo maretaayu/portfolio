@@ -21,7 +21,9 @@ function PortfolioContainer() {
       description:
         "Crafting smooth, responsive web experiences and adherence to best practices for search visibility.",
       alt: "Frontend Illustration",
-      onClick: () => alert("Frontend Clicked"),
+      onClick: () => {
+        router.push("/frontend");
+      },
     },
     {
       banner: "/images/PortoContent.svg",
