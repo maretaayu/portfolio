@@ -4,7 +4,7 @@ function SectionJourney() {
   return (
     <div
       id="journey"
-      className="grid md:grid-cols-2 gap-6 items-center page-center md:py-24 py-12"
+      className="grid md:grid-cols-2 gap-6 items-center page-center md:pt-24  py-12"
     >
       <div className="mx-auto">
         <Image
