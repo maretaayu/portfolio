@@ -8,27 +8,18 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
 } from "@heroicons/react/16/solid";
 
+// Definisikan tipe untuk item navigasi
+type NavItem = {
+  href: string;
+  icon: React.ElementType;
+  label: string;
+};
+
 function Header() {
-  const [activeSection, setActiveSection] = useState("/");
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("/");
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const navItems = [
+  const navItems: NavItem[] = [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "#journey", icon: BriefcaseIcon, label: "Journey" },
     { href: "#portfolio", icon: ComputerDesktopIcon, label: "Portfolio" },
@@ -40,6 +31,43 @@ function Header() {
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      const sections = navItems.map((item) => item.href.replace("#", ""));
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section === "") continue; // Skip the home section
+
+        const element = document.getElementById(section);
+        if (element && scrollPosition >= element.offsetTop - 100) {
+          setActiveSection("#" + section);
+          break;
+        }
+      }
+
+      // Check if we're at the top of the page
+      if (scrollPosition < 100) {
+        setActiveSection("/");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call once to set initial state
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="mt-4 bottom-4 md:top-0 fixed mx-auto w-full z-10 h-fit">
       <nav
@@ -48,24 +76,16 @@ function Header() {
         }`}
       >
         {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={() => setActiveSection(item.href)}
-          >
+          <Link key={item.href} href={item.href}>
             <div className="flex items-center flex-col gap-1">
               <item.icon
                 className={`h-6 w-6 md:hidden ${
-                  activeSection === item.href
-                    ? "text-pink"
-                    : "text-gray opacity-6"
+                  activeSection === item.href ? "text-pink" : "text-gray"
                 }`}
               />
               <p
                 className={`text-xs md:text-lg ${
-                  activeSection === item.href
-                    ? "text-pink"
-                    : "text-gray opacity-6"
+                  activeSection === item.href ? "text-pink" : "text-gray"
                 }`}
               >
                 {item.label}
