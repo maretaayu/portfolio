@@ -18,6 +18,7 @@ function Portfolio({ portfolioItems }: PortfolioProps) {
             description={item.description}
             alt={item.alt}
             onClick={item.onClick}
+            onSecondaryClick={item.onSecondaryClick}
           />
         ))}
       </div>

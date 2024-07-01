@@ -6,9 +6,17 @@ type ButtonProps = {
   className?: string;
   onClick?: () => void;
   href?: string;
+  isFullWidth?: boolean;
 };
 
-function Button({ variant, children, className, onClick, href }: ButtonProps) {
+function Button({
+  variant,
+  children,
+  className,
+  onClick,
+  isFullWidth = false,
+  href,
+}: ButtonProps) {
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -25,6 +33,7 @@ function Button({ variant, children, className, onClick, href }: ButtonProps) {
     <button
       className={`button button-${variant} ${className || ""}`}
       onClick={handleClick}
+      style={{ width: isFullWidth ? "100%" : "auto" }}
     >
       {children}
     </button>

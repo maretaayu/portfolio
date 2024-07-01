@@ -20,9 +20,11 @@ function PortfolioDetail({
             banner={item.banner}
             title={item.title}
             buttonLabel={item.buttonLabel}
+            buttonSecondaryLabel={item.buttonSecondaryLabel}
             description={item.description}
             alt={item.alt}
             onClick={item.onClick}
+            onSecondaryClick={item.onSecondaryClick}
             withCardDetail={true}
             companyName={item.companyName}
             details={item.details}
