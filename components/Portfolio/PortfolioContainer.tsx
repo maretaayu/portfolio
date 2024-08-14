@@ -31,7 +31,9 @@ function PortfolioContainer() {
       description:
         "Demystifying tech through engaging storytelling. Creating content that educates and inspires.",
       alt: "Content Creation Illustration",
-      onClick: () => alert("Content Creation Clicked"),
+      onClick: () => {
+        router.push("https://tiktok.com/@maretacodes");
+      },
     },
   ];
   return <Portfolio portfolioItems={portfolioItems} />;
