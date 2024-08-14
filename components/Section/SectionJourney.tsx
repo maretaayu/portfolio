@@ -35,7 +35,7 @@ function SectionJourney() {
         <div className="flex gap-12 bg-subtle text-ink rounded-xl w-fit px-6 py-3">
           <div className="grid gap-2">
             <p className="md:text-2xl text-lg">
-              <b className="font-bold">27K+</b>
+              <b className="font-bold">28K+</b>
             </p>
             <p className="font-light">TikTok</p>
           </div>
