@@ -12,7 +12,7 @@ function Layout({ children, pageTitle }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>Mareta | {pageTitle}</title>
+        <title>Mareta Ayu Handanari | {pageTitle}</title>
         <meta name="description" content="Home page" />
         <script
           type="text/javascript"
