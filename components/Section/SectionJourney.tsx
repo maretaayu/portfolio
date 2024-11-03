@@ -41,7 +41,7 @@ function SectionJourney() {
           </div>
           <div className="grid gap-2">
             <p className="md:text-2xl text-lg">
-              <b className="font-bold">11K+</b>
+              <b className="font-bold">14K+</b>
             </p>
             <p className="font-light">Instagram</p>
           </div>
