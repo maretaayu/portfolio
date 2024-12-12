@@ -8,7 +8,7 @@ function SectionJourney() {
     >
       <div className="mx-auto">
         <Image
-          src="/images/Journey.png"
+          src="/images/JourneyImage.png"
           width={531}
           height={399}
           alt="Journey"
@@ -41,7 +41,7 @@ function SectionJourney() {
           </div>
           <div className="grid gap-2">
             <p className="md:text-2xl text-lg">
-              <b className="font-bold">14K+</b>
+              <b className="font-bold">15K+</b>
             </p>
             <p className="font-light">Instagram</p>
           </div>

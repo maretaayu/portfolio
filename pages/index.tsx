@@ -1,8 +1,9 @@
-import { Layout, Hero } from "../components";
+import { Layout, Hero, ClassContainer } from "../components";
 import { SectionJourney } from "../components/Section/SectionJourney";
 import { PortfolioContainer } from "../components/Portfolio/PortfolioContainer";
 import { LearnContainer } from "../components/Learn/LearnContainer";
 import { SectionContact } from "../components/Section/SectionContact";
+import { SectionFooter } from "../components/Section/SectionFooter";
 
 export default function Page() {
   return (
@@ -12,6 +13,7 @@ export default function Page() {
       <PortfolioContainer />
       <LearnContainer />
       <SectionContact />
+      <SectionFooter />
     </Layout>
   );
 }

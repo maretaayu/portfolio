@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Button } from "../Button";
 import { CardDetail, type CardDetailProps } from "./CardDetail";
+import { DiscountLabel } from "../Label";
+import { CardPrice } from "./CardPrice";
 
 type CardProps = CardDetailProps & {
   banner: string;
@@ -10,8 +12,12 @@ type CardProps = CardDetailProps & {
   onClick?: () => void;
   onSecondaryClick?: () => void;
   withCardDetail?: boolean;
+  withPriceList?: boolean;
   buttonLabel?: string;
   buttonSecondaryLabel?: string;
+  basePrice?: number;
+  finalPrice?: number;
+  sessionPrice?: number;
 };
 
 function Card({
@@ -24,11 +30,15 @@ function Card({
   onSecondaryClick,
   companyName,
   details,
+  withPriceList,
   buttonLabel,
   buttonSecondaryLabel,
+  basePrice,
+  finalPrice,
+  sessionPrice,
 }: CardProps) {
   return (
-    <div className="bg-invert rounded-3xl shadow-neutral p-2">
+    <div className="bg-invert rounded-3xl shadow-neutral p-2 h-fit">
       <div className="relative ">
         <Image
           src={banner}
@@ -52,6 +62,13 @@ function Card({
           <h3 className="text-ink font-bold text-lg mt-4">{title}</h3>
           <p className="text-ink font-light text-md mt-2">{description}</p>
         </div>
+        {withPriceList && (
+          <CardPrice
+            basePrice={basePrice}
+            finalPrice={finalPrice}
+            sessionPrice={sessionPrice}
+          />
+        )}
         <div className="flex gap-2">
           <Button
             className="mt-4"

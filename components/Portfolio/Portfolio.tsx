@@ -8,7 +8,7 @@ type PortfolioProps = {
 function Portfolio({ portfolioItems }: PortfolioProps) {
   return (
     <section id="portfolio" className="page-center md:py-24 py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">Portfolio</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">My Work</h2>
       <div className="grid gap-8 md:grid-cols-3 mt-8">
         {portfolioItems.map((item, index) => (
           <Card
