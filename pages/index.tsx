@@ -13,7 +13,6 @@ export default function Page() {
       <PortfolioContainer />
       <LearnContainer />
       <SectionContact />
-      <SectionFooter />
     </Layout>
   );
 }

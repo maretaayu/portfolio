@@ -2,13 +2,15 @@ import { ReactNode } from "react";
 import { Header } from "../Header";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
+import { SectionFooter } from "../Section/SectionFooter";
 
 type LayoutProps = {
   children: ReactNode;
   pageTitle: string;
+  withHeader?: boolean;
 };
 
-function Layout({ children, pageTitle }: LayoutProps) {
+function Layout({ children, withHeader = true, pageTitle }: LayoutProps) {
   return (
     <>
       <Head>
@@ -25,8 +27,9 @@ function Layout({ children, pageTitle }: LayoutProps) {
           }}
         />
       </Head>
-      <Header />
+      {withHeader && <Header />}
       {children}
+      <SectionFooter />
       <Analytics />
     </>
   );
