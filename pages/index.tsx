@@ -1,4 +1,4 @@
-import { Layout, Hero, ClassContainer } from "../components";
+import { Layout, Hero } from "../components";
 import { SectionJourney } from "../components/Section/SectionJourney";
 import { PortfolioContainer } from "../components/Portfolio/PortfolioContainer";
 import { LearnContainer } from "../components/Learn/LearnContainer";
