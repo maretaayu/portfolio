@@ -23,7 +23,7 @@ function Header() {
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "#journey", icon: BriefcaseIcon, label: "Journey" },
     { href: "#portfolio", icon: ComputerDesktopIcon, label: "Portfolio" },
-    { href: "#learn", icon: BoltIcon, label: "Learn" },
+    { href: "#class", icon: BoltIcon, label: "Class" },
     {
       href: "#contact",
       icon: ChatBubbleOvalLeftEllipsisIcon,
