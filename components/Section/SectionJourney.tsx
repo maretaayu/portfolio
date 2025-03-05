@@ -20,16 +20,18 @@ function SectionJourney() {
             My Exciting Journey 🤓
           </h2>
           <p className="text-ink font-light md:text-lg text-md">
-            Fueled by an insatiable curiosity and a love for learning, my
-            journey started with building landing pages using HTML, CSS & JS,
-            followed by crafting user experiences in&nbsp;
-            <b className="font-bold">UI/UX Design</b>.
+            Starting as a <b className="font-bold">UI/UX Designer</b> and
+            evolving into a <b className="font-bold">Frontend Engineer</b>, I’ve
+            always been passionate about building seamless, user-friendly
+            experiences. With expertise in React, Next.js, and JavaScript, I
+            craft high-performance web applications that blend design and
+            functionality.
             <br />
             <br />
-            Now, I thrive as a <b className="font-bold">Software Engineer</b>
-            &nbsp; specializing in frontend development. Alongside, I share my
-            expertise and experiences as a&nbsp;
-            <b className="font-bold">Tech Content Creator</b>
+            Beyond coding, I love sharing knowledge—breaking down frontend and
+            UI/UX concepts through content and mentorship. For me, tech is about
+            more than just code; it’s about innovation, collaboration, and
+            creating meaningful experiences that inspire and empower others. 🚀
           </p>
         </div>
         <div className="flex gap-12 bg-subtle text-ink rounded-xl w-fit px-6 py-3">

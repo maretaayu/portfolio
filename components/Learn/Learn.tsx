@@ -8,7 +8,7 @@ type LearnProps = {
 function Learn({ LearnItems }: LearnProps) {
   return (
     <section id="class" className="page-center md:py-24 py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">Available Class</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">Learn with Mareta</h2>
       <div className="grid gap-8 md:grid-cols-3 mt-8">
         {LearnItems.map((item, index) => (
           <Card

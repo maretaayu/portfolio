@@ -32,7 +32,7 @@ function PortfolioContainer() {
         "Demystifying tech through engaging storytelling. Creating content that educates and inspires.",
       alt: "Content Creation Illustration",
       onClick: () => {
-        router.push("https://tiktok.com/@maretacodes");
+        router.push("https://www.instagram.com/maretacodes");
       },
     },
   ];
