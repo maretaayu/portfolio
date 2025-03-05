@@ -5,7 +5,7 @@ function SectionFooter() {
         <p>
           <b>maretacodes</b>
         </p>
-        <p>Copyright © 2024 Alright Reserved</p>
+        <p>Copyright © 2025 Alright Reserved</p>
       </div>
     </section>
   );
