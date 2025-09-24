@@ -9,13 +9,10 @@ export default function Page() {
   return (
     <Layout pageTitle="Homepage">
       <Head>
-        <title>
-          Mareta: Sharing Frontend & UI/UX Insights as a Mentor & Tech Content
-          Creator
-        </title>
+        <title>Mareta - Frontend Engineer & UI/UX Designer</title>
         <meta
           name="description"
-          content="Mareta is a Frontend Engineer with a strong UI/UX design background, specializing in React, Next.js, and JavaScript. Passionate about creating intuitive web experiences, she shares insights on frontend development and UI/UX through content and mentorship, bridging design and functionality seamlessly. 🚀"
+          content="Mareta is a Frontend Engineer with a strong UI/UX design background, specializing in React, Next.js, and JavaScript."
         />
       </Head>
       <Hero />

@@ -1,15 +1,16 @@
 import { useRouter } from "next/router";
 import { Portfolio } from "./Portfolio";
+import { useApp } from "../../context/AppContext";
 
 function PortfolioContainer() {
   const router = useRouter();
+  const { t } = useApp();
 
   const portfolioItems = [
     {
       banner: "/images/PortoUIUX.svg",
-      title: "UI/UX",
-      description:
-        "Transforming ideas into visually stunning interfaces. Elevating user experiences through intuitive designs that captivate.",
+      title: t("portfolio.uiux.title"),
+      description: t("portfolio.uiux.desc"),
       alt: "UI/UX Illustration",
       onClick: () => {
         router.push("/uiux");
@@ -17,9 +18,8 @@ function PortfolioContainer() {
     },
     {
       banner: "/images/PortoFrontend.svg",
-      title: "Frontend",
-      description:
-        "Crafting smooth, responsive web experiences and adherence to best practices for search visibility.",
+      title: t("portfolio.frontend.title"),
+      description: t("portfolio.frontend.desc"),
       alt: "Frontend Illustration",
       onClick: () => {
         router.push("/frontend");
@@ -27,15 +27,15 @@ function PortfolioContainer() {
     },
     {
       banner: "/images/PortoContent.svg",
-      title: "Content Creation",
-      description:
-        "Demystifying tech through engaging storytelling. Creating content that educates and inspires.",
+      title: t("portfolio.content.title"),
+      description: t("portfolio.content.desc"),
       alt: "Content Creation Illustration",
       onClick: () => {
         router.push("https://www.instagram.com/maretacodes");
       },
     },
   ];
+
   return <Portfolio portfolioItems={portfolioItems} />;
 }
 

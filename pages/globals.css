@@ -1,23 +1,44 @@
-/* pages/globals.css atau src/globals.css, tergantung di mana Anda menaruhnya */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"); */
-/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"); */
-@import url("https://fonts.cdnfonts.com/css/sora");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  /* font-family: "Inter", sans-serif; */
-  font-family: "Sora Variable", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-a {
-  font-weight: 200; /* Equivalent to 'font-light' in Tailwind */
+
+/* Dark mode styles */
+.dark body {
+  background-color: #111827;
+  color: #ffffff;
 }
-.page-center {
-  width: 90%;
-  margin: 0 auto;
-  max-width: 1200px;
+
+p {
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
 }
 
 h1,
@@ -27,32 +48,10 @@ h4,
 h5,
 h6,
 p {
-  margin: 0 !important;
+  margin: 0;
 }
 
-.shadow-neutral {
-  box-shadow: 0px 16px 40px 0px #7090b033;
-}
-
-.section-contact {
-  background-image: url("/images/BannerQuestion.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 184px 0;
-}
-/* src/components/Button.module.css */
-.button {
-  @apply px-6 py-3 rounded-full font-semibold;
-}
-
-.button-primary {
-  @apply bg-accent text-invert;
-}
-.button-primary:hover {
-  @apply bg-accentDark; /* Gantilah dengan warna gelap dari accent jika ada */
-}
-
-.button-secondary {
-  @apply bg-invert border border-accent text-accent;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
