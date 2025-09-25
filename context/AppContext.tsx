@@ -31,6 +31,7 @@ const translations = {
     "nav.home": "Home",
     "nav.journey": "Journey",
     "nav.work": "Work",
+    "nav.stories": "Stories",
     "nav.speaking": "Speaking",
     "nav.contact": "Contact",
 
@@ -125,6 +126,7 @@ const translations = {
     "nav.home": "Beranda",
     "nav.journey": "Perjalanan",
     "nav.work": "Karya",
+    "nav.stories": "Cerita",
     "nav.speaking": "Berbicara",
     "nav.contact": "Kontak",
 
