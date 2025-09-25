@@ -204,30 +204,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const posts = await serverBlogService.getPostsByTag(tag);
     const allTags = await serverBlogService.getAllTags();
     
-    // Convert tag names to BlogTag format with slugs
-    const tagObjects: BlogTag[] = allTags.map((tagName: string) => ({
-      name: tagName,
-      slug: tagName.toLowerCase().replace(/\s+/g, '-'),
-      count: 0, // We'll get count from posts
-    }));
-
-    // Count posts for each tag
-    const allPosts = await serverBlogService.getAllPosts();
-    const tagCounts = new Map<string, number>();
-    
-    allPosts.forEach(post => {
-      if (post.tags) {
-        post.tags.forEach(tagName => {
-          tagCounts.set(tagName, (tagCounts.get(tagName) || 0) + 1);
-        });
-      }
-    });
-
-    // Update counts in tagObjects
-    const tagsWithCounts = tagObjects.map(tagObj => ({
-      ...tagObj,
-      count: tagCounts.get(tagObj.name) || 0,
-    }));
+    // allTags is already in BlogTag format with counts from the service
+    const tagsWithCounts = allTags;
 
     return {
       props: {

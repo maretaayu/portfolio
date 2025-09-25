@@ -22,11 +22,21 @@ export default async function handler(
     }
   } else if (req.method === "DELETE") {
     try {
+      console.log(`Attempting to delete post with ID: ${id}`);
       await serverBlogService.deletePost(id);
+      console.log(`Successfully deleted post with ID: ${id}`);
       res.status(200).json({ message: "Post deleted successfully" });
     } catch (error) {
-      console.error("API Error:", error);
-      res.status(500).json({ error: "Failed to delete post" });
+      console.error("DELETE API Error:", error);
+      console.error("Error details:", {
+        message: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined,
+        postId: id
+      });
+      res.status(500).json({ 
+        error: "Failed to delete post",
+        details: error instanceof Error ? error.message : String(error)
+      });
     }
   } else {
     res.setHeader("Allow", ["PUT", "DELETE"]);
