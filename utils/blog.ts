@@ -6,22 +6,30 @@ import { BlogPost, BlogTag } from "../types/blog";
 // Deprecated functions - use Firebase instead
 // These are kept for backward compatibility during migration
 export function getAllPosts(): BlogPost[] {
-  console.warn('getAllPosts from utils/blog.ts is deprecated. Use serverBlogService instead.');
+  console.warn(
+    "getAllPosts from utils/blog.ts is deprecated. Use serverBlogService instead."
+  );
   return [];
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  console.warn('getPostBySlug from utils/blog.ts is deprecated. Use serverBlogService instead.');
+  console.warn(
+    "getPostBySlug from utils/blog.ts is deprecated. Use serverBlogService instead."
+  );
   return undefined;
 }
 
 export function getPostsByTag(tag: string): BlogPost[] {
-  console.warn('getPostsByTag from utils/blog.ts is deprecated. Use serverBlogService instead.');
+  console.warn(
+    "getPostsByTag from utils/blog.ts is deprecated. Use serverBlogService instead."
+  );
   return [];
 }
 
 export function getAllTags(): BlogTag[] {
-  console.warn('getAllTags from utils/blog.ts is deprecated. Use serverBlogService instead.');
+  console.warn(
+    "getAllTags from utils/blog.ts is deprecated. Use serverBlogService instead."
+  );
   return [];
 }
 
