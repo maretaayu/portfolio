@@ -79,6 +79,7 @@ function Hero() {
             variants={itemVariants}
           >
             {t("hero.description")}
+            {" "}
             <span
               className={`font-normal transition-colors duration-500 ${
                 isDark ? "text-white" : "text-black"

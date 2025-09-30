@@ -88,7 +88,7 @@ function Learn({ speakingItems }: SpeakingProps) {
               whileHover={{ x: 10 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="grid md:grid-cols-[auto_1fr_auto] gap-6 md:gap-10 items-center">
+              <div className="grid gap-6 md:gap-10 md:grid-cols-[auto_1fr_min-content] items-start">
                 <div className="flex justify-center md:justify-start">
                   {item.thumbnail ? (
                     <Image
@@ -149,37 +149,28 @@ function Learn({ speakingItems }: SpeakingProps) {
                   </p>
                 </div>
 
-                <div className="text-center md:text-right">
-                  <div className="space-y-2">
-                    <div
-                      className={`text-sm font-light transition-colors duration-500 ${
-                        isDark ? "text-gray-500" : "text-gray-400"
-                      }`}
+                <div className="text-center md:text-right md:justify-self-end md:self-start">
+                  <div
+                    className={`inline-flex items-center space-x-2 text-xs font-light transition-colors duration-300 ${
+                      isDark
+                        ? "text-gray-500 group-hover:text-white"
+                        : "text-gray-400 group-hover:text-black"
+                    }`}
+                  >
+                    <span>Watch</span>
+                    <svg
+                      className="w-3 h-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {item.audience}
-                    </div>
-                    <div
-                      className={`inline-flex items-center space-x-2 text-xs font-light transition-colors duration-300 ${
-                        isDark
-                          ? "text-gray-500 group-hover:text-white"
-                          : "text-gray-400 group-hover:text-black"
-                      }`}
-                    >
-                      <span>Watch</span>
-                      <svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>

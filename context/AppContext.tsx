@@ -32,7 +32,7 @@ const translations = {
     "nav.journey": "Journey",
     "nav.work": "Work",
     "nav.stories": "Stories",
-    "nav.speaking": "Speaking",
+    "nav.speaking": "Tutorials",
     "nav.contact": "Contact",
 
     // Hero Section
@@ -99,7 +99,7 @@ const translations = {
       "Perfect for mastering responsive web design with pure HTML & CSS",
     "learn.item2.title": "Landing Page UI Design Tutorial with Figma",
     "learn.item2.desc":
-      "Ideal for those wanting to dive into the complete landing page design process using Figma.",
+      "Guided walkthrough for designers crafting end-to-end landing pages in Figma.",
     "learn.item3.title": "Slicing Landing Page Personal Website - Bootstrap",
     "learn.item3.desc":
       "Great for quickly building responsive websites using the powerful Bootstrap framework.",
@@ -122,7 +122,7 @@ const translations = {
     "nav.journey": "Perjalanan",
     "nav.work": "Karya",
     "nav.stories": "Cerita",
-    "nav.speaking": "Berbicara",
+    "nav.speaking": "Tutorial",
     "nav.contact": "Kontak",
 
     // Hero Section
@@ -191,7 +191,7 @@ const translations = {
       "Sempurna untuk menguasai desain web responsif dengan HTML & CSS murni",
     "learn.item2.title": "Tutorial UI Design Landing Page dengan Figma",
     "learn.item2.desc":
-      "Ideal bagi mereka yang ingin menyelami proses desain landing page lengkap menggunakan Figma.",
+      "Panduan menyeluruh bagi desainer untuk merancang landing page end-to-end di Figma.",
     "learn.item3.title": "Slicing Landing Page Personal Website - Bootstrap",
     "learn.item3.desc":
       "Bagus untuk membangun website responsif dengan cepat menggunakan framework Bootstrap yang powerful.",
