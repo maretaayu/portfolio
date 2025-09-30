@@ -17,10 +17,12 @@ export default function Page({ latestPosts }: HomePageProps) {
   return (
     <Layout pageTitle="Homepage">
       <Head>
-        <title>Mareta - Frontend Engineer & UI/UX Designer</title>
+        <title>
+          Mareta Ayu Handanari | Software Engineer & Content Creator
+        </title>
         <meta
           name="description"
-          content="Mareta is a Frontend Engineer with a strong UI/UX design background, specializing in React, Next.js, and JavaScript."
+          content="Explore the work of Mareta Ayu Handanari, a software engineer, product designer, and content creator crafting human-centered web experiences and sharing insights on design and technology."
         />
       </Head>
       <Hero />

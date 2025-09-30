@@ -101,66 +101,15 @@ function Hero() {
         </motion.div>
 
         <motion.div className="relative" variants={floatVariants}>
-          <div className="w-80 h-80 mx-auto relative">
-            <div
-              className={`absolute inset-0 border rounded-full transition-colors duration-500 ${
-                isDark ? "border-gray-700" : "border-gray-200"
-              }`}
-            ></div>
-            <div
-              className={`absolute inset-8 border rounded-full transition-colors duration-500 ${
-                isDark ? "border-gray-800" : "border-gray-100"
-              }`}
-            ></div>
-
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg
-                viewBox="0 0 100 100"
-                className={`w-32 h-32 stroke-1 fill-none transition-colors duration-500 ${
-                  isDark ? "stroke-white" : "stroke-black"
-                }`}
-              >
-                {/* Face */}
-                <circle cx="50" cy="25" r="8" />
-
-                {/* Simple bob haircut */}
-                <path
-                  d="M42,20 Q50,16 58,20 L58,24 Q50,26 42,24 Z"
-                  fill="none"
-                />
-
-                {/* Body */}
-                <line x1="50" y1="33" x2="50" y2="60" />
-
-                {/* Arms */}
-                <line x1="50" y1="42" x2="35" y2="50" />
-                <line x1="50" y1="42" x2="65" y2="50" />
-
-                {/* Legs */}
-                <line x1="50" y1="60" x2="40" y2="80" />
-                <line x1="50" y1="60" x2="60" y2="80" />
-
-                {/* Simple triangular dress */}
-                <path d="M46,55 L54,55 L58,65 L42,65 Z" fill="none" />
-
-                {/* Connection elements - simplified */}
-                <circle cx="25" cy="20" r="2" fill="none" />
-                <circle cx="75" cy="20" r="2" fill="none" />
-                <line x1="25" y1="20" x2="42" y2="22" />
-                <line x1="75" y1="20" x2="58" y2="22" />
-              </svg>
-            </div>
-
-            <div
-              className={`absolute -top-4 -right-4 w-8 h-8 border rounded-full transition-colors duration-500 ${
-                isDark ? "border-gray-600" : "border-gray-300"
-              }`}
-            ></div>
-            <div
-              className={`absolute -bottom-8 -left-8 w-12 h-12 border rounded-full transition-colors duration-500 ${
-                isDark ? "border-gray-700" : "border-gray-200"
-              }`}
-            ></div>
+          <div className="w-full max-w-xl mx-auto">
+            <video
+              className="w-full rounded-3xl object-cover"
+              src="/images/Animated_Hijabi_Coder_Presentation_Ideas.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
         </motion.div>
       </motion.div>
