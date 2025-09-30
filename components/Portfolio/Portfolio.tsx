@@ -37,6 +37,7 @@ function Portfolio({ portfolioItems }: PortfolioProps) {
 
   return (
     <div
+      id="portfolio"
       className={`min-h-screen py-20 transition-colors duration-500 ${
         isDark ? "bg-gray-900" : "bg-gray-50"
       }`}

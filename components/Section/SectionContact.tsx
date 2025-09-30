@@ -7,6 +7,7 @@ function SectionContact() {
 
   return (
     <div
+      id="contact"
       className={`min-h-screen flex items-center justify-center py-20 transition-colors duration-500 ${
         isDark ? "bg-gray-900" : "bg-white"
       }`}

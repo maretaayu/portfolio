@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useApp } from "../../context/AppContext";
 
@@ -10,6 +11,7 @@ type SpeakingProps = {
     type: string;
     audience?: string;
     url?: string;
+    thumbnail?: string;
   }>;
 };
 
@@ -39,6 +41,7 @@ function Learn({ speakingItems }: SpeakingProps) {
 
   return (
     <div
+      id="class"
       className={`min-h-screen py-20 transition-colors duration-500 ${
         isDark ? "bg-black text-white" : "bg-white text-black"
       }`}
@@ -85,84 +88,42 @@ function Learn({ speakingItems }: SpeakingProps) {
               whileHover={{ x: 10 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="grid md:grid-cols-4 gap-8 items-center">
-                <div className="md:col-span-1">
-                  <div className="w-16 h-16 mx-auto md:mx-0">
-                    <svg
-                      viewBox="0 0 100 100"
-                      className={`w-full h-full stroke-1 fill-none transition-colors duration-500 ${
-                        isDark ? "stroke-white" : "stroke-black"
-                      }`}
-                    >
-                      <circle cx="50" cy="20" r="6" />
-                      <path
-                        d="M44,16 Q50,13 56,16 L56,19 Q50,21 44,19 Z"
-                        fill="none"
-                      />
-                      <line x1="50" y1="26" x2="50" y2="50" />
-                      <line x1="50" y1="35" x2="35" y2="43" />
-                      <line x1="50" y1="35" x2="65" y2="43" />
-                      <line x1="50" y1="50" x2="40" y2="70" />
-                      <line x1="50" y1="50" x2="60" y2="70" />
-                      <path d="M46,45 L54,45 L57,55 L43,55 Z" fill="none" />
-
-                      {index === 0 && (
-                        <>
-                          <rect
-                            x="25"
-                            y="30"
-                            width="50"
-                            height="4"
-                            fill="none"
-                          />
-                          <circle cx="20" cy="45" r="1.5" fill="none" />
-                          <circle cx="30" cy="50" r="1.5" fill="none" />
-                          <circle cx="70" cy="45" r="1.5" fill="none" />
-                          <circle cx="80" cy="50" r="1.5" fill="none" />
-                        </>
-                      )}
-
-                      {index === 1 && (
-                        <>
-                          <rect
-                            x="68"
-                            y="25"
-                            width="8"
-                            height="12"
-                            fill="none"
-                          />
-                          <line x1="70" y1="28" x2="74" y2="28" />
-                          <line x1="70" y1="31" x2="74" y2="31" />
-                          <line x1="70" y1="34" x2="74" y2="34" />
-                        </>
-                      )}
-
-                      {index === 2 && (
-                        <>
-                          <rect
-                            x="65"
-                            y="25"
-                            width="10"
-                            height="6"
-                            fill="none"
-                          />
-                          <circle
-                            cx="70"
-                            cy="28"
-                            r="1"
-                            fill={isDark ? "white" : "black"}
-                          />
-                          <path
-                            d="M68,35 Q69,34 70,35 Q69,36 68,35"
-                            fill={isDark ? "white" : "black"}
-                          />
-                        </>
-                      )}
-                    </svg>
-                  </div>
+              <div className="grid md:grid-cols-[auto_1fr_auto] gap-6 md:gap-10 items-center">
+                <div className="flex justify-center md:justify-start">
+                  {item.thumbnail ? (
+                    <Image
+                      src={item.thumbnail}
+                      alt={item.title}
+                      width={448}
+                      height={256}
+                      className="w-56 h-32 rounded-3xl object-cover shadow-md"
+                      sizes="(min-width: 768px) 14rem, 100vw"
+                    />
+                  ) : (
+                    <div className="w-56 h-32">
+                      <svg
+                        viewBox="0 0 100 100"
+                        className={`w-full h-full stroke-1 fill-none transition-colors duration-500 ${
+                          isDark ? "stroke-white" : "stroke-black"
+                        }`}
+                      >
+                        <circle cx="50" cy="20" r="6" />
+                        <path
+                          d="M44,16 Q50,13 56,16 L56,19 Q50,21 44,19 Z"
+                          fill="none"
+                        />
+                        <line x1="50" y1="26" x2="50" y2="50" />
+                        <line x1="50" y1="35" x2="35" y2="43" />
+                        <line x1="50" y1="35" x2="65" y2="43" />
+                        <line x1="50" y1="50" x2="40" y2="70" />
+                        <line x1="50" y1="50" x2="60" y2="70" />
+                        <path d="M46,45 L54,45 L57,55 L43,55 Z" fill="none" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
 
-                <div className="md:col-span-2 space-y-4 text-center md:text-left">
+                <div className="space-y-4 text-center md:text-left">
                   <div
                     className={`text-xs font-light tracking-widest uppercase transition-colors duration-500 ${
                       isDark ? "text-gray-400" : "text-gray-500"
@@ -188,7 +149,7 @@ function Learn({ speakingItems }: SpeakingProps) {
                   </p>
                 </div>
 
-                <div className="md:col-span-1 text-center md:text-right">
+                <div className="text-center md:text-right">
                   <div className="space-y-2">
                     <div
                       className={`text-sm font-light transition-colors duration-500 ${

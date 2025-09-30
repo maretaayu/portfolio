@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
@@ -28,6 +28,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (router.pathname !== "/") return;
       const scrollPosition = window.scrollY;
 
       if (scrollPosition > 50) {
@@ -36,7 +37,9 @@ function Header() {
         setIsScrolled(false);
       }
 
-      const sections = navItems.map((item) => item.href.replace("#", ""));
+      const sections = navItems
+        .filter((item) => item.href.startsWith("#"))
+        .map((item) => item.href.replace("#", ""));
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -60,7 +63,72 @@ function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [router.pathname]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = router.asPath.split("#")[1];
+    if (!hash) return;
+
+    const timeout = window.setTimeout(() => {
+      const element = document.getElementById(hash);
+      if (!element) return;
+
+      const yOffset = 80;
+      const targetPosition =
+        element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
+      setActiveSection(`#${hash}`);
+    }, 50);
+
+    return () => {
+      window.clearTimeout(timeout);
+    };
+  }, [router.asPath]);
+
+  useEffect(() => {
+    if (router.asPath.includes("#")) return;
+    setActiveSection(router.pathname === "/" ? "/" : router.pathname);
+  }, [router.pathname, router.asPath]);
+
+  const handleNavClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (href.startsWith("#")) {
+      event.preventDefault();
+      const targetId = href.substring(1);
+
+      if (router.pathname !== "/") {
+        setActiveSection(href);
+        void router.push({ pathname: "/", hash: targetId });
+        setIsMenuOpen(false);
+        return;
+      }
+
+      const element = document.getElementById(targetId);
+      if (element) {
+        const yOffset = 80;
+        const targetPosition =
+          element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+        setActiveSection(href);
+      }
+
+      setIsMenuOpen(false);
+      return;
+    }
+
+    setActiveSection(href);
+    if (href === router.pathname) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setIsMenuOpen(false);
+      return;
+    }
+
+    setIsMenuOpen(false);
+  };
 
   const isDark = theme === "dark";
 
@@ -97,6 +165,7 @@ function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(event) => handleNavClick(event, item.href)}
                 className={`text-sm font-light transition-all duration-300 hover:scale-105 ${
                   activeSection === item.href
                     ? isDark
@@ -245,7 +314,7 @@ function Header() {
                     >
                       <Link
                         href={item.href}
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={(event) => handleNavClick(event, item.href)}
                         className={`block text-base font-light py-2 px-4 rounded-lg transition-all duration-300 ${
                           activeSection === item.href
                             ? isDark

@@ -11,6 +11,7 @@ const LearnContainer: React.FC = () => {
       type: "Tutorial",
       audience: "Tech professionals, career changers",
       url: "https://www.youtube.com/watch?v=BSHd1tLAJog",
+      thumbnail: "https://img.youtube.com/vi/BSHd1tLAJog/hqdefault.jpg",
     },
     {
       title: t("learn.item2.title"),
@@ -18,6 +19,7 @@ const LearnContainer: React.FC = () => {
       type: "Design Tutorial",
       audience: "Content creators, developers",
       url: "https://www.youtube.com/watch?v=1ZGgcCYmvYU",
+      thumbnail: "https://img.youtube.com/vi/1ZGgcCYmvYU/hqdefault.jpg",
     },
     {
       title: t("learn.item3.title"),
@@ -25,6 +27,7 @@ const LearnContainer: React.FC = () => {
       type: "Framework Tutorial",
       audience: "Team leads, mentors",
       url: "https://www.youtube.com/watch?v=-2kg-8ns8oE",
+      thumbnail: "https://img.youtube.com/vi/-2kg-8ns8oE/hqdefault.jpg",
     },
   ];
 

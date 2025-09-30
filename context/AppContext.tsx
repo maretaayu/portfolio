@@ -37,8 +37,8 @@ const translations = {
 
     // Hero Section
     "hero.tagline": "Transforming Through Change",
-    "hero.description": "Building bridges between design, code, and community.",
-    "hero.growth": "Sharing knowledge because growth happens together.",
+    "hero.description": "Building bridges between design, code, and storytelling.",
+    "hero.growth": "Sharing what I'm learning as it unfolds.",
     "hero.role1": "Software Engineer",
     "hero.role2": "Product Designer",
     "hero.role3": "Content Creator",
@@ -57,32 +57,27 @@ const translations = {
     "journey.marketing": "Senior Marketing Engineer",
     "journey.design": "Senior UI Designer",
     "journey.engineering": "Software Engineer",
-    "journey.community": "Community Builder",
+    "journey.community": "Content Creator",
     "journey.marketing.subtitle": "Business meets tech",
-    "journey.design.subtitle": "Visual storytelling",
+    "journey.design.subtitle": "Designing learning experiences",
     "journey.engineering.subtitle": "Building with code",
-    "journey.community.subtitle": "Sharing the journey",
+    "journey.community.subtitle": "Documenting the learning",
     "journey.marketing.insight":
       "Every campaign needs a solid technical foundation.",
-    "journey.design.insight": "Design is empathy made visible.",
+    "journey.design.insight":
+      "Consistent systems keep every class experience intentional.",
     "journey.engineering.insight":
       "Code that impacts millions starts with one student's need.",
-    "journey.community.insight": "Growth happens when we learn together.",
+    "journey.community.insight":
+      "Publishing in-progress thoughts keeps learning honest.",
     "journey.marketing.story":
       "Built all Ruangguru's marketing landing pages, optimized technical SEO, and managed the company blog. Discovered that marketing and code make magic together.",
     "journey.design.story":
-      "Discovered that pixels could tell stories that words couldn't.",
+      "Designed Brain Academy, English Academy, and Ruangguru Live, cared for the design system, and reviewed fellow designers' work.",
     "journey.engineering.story":
       "Built AiRIS (ai.ruangguru.com) - an AI learning platform used by students across Indonesia. From concept to production, creating tools that make education accessible.",
     "journey.community.story":
-      "Turned my career pivots into content that helps others navigate theirs.",
-    "journey.ripple": "The Ripple Effect",
-    "journey.tiktok": "TikTok Followers",
-    "journey.instagram": "Instagram Community",
-    "journey.mentees": "Lives Changed",
-    "journey.tiktok.desc": "Sharing tech journeys",
-    "journey.instagram.desc": "Daily inspiration",
-    "journey.mentees.desc": "Through mentorship",
+      "Turned every experiment into tutorials, posts, and notes so others can learn in real time.",
 
     // Portfolio Section
     "portfolio.subtitle": "Work",
@@ -133,9 +128,9 @@ const translations = {
     // Hero Section
     "hero.tagline": "Bertransformasi Melalui Perubahan",
     "hero.description":
-      "Membangun jembatan antara desain, kode, dan komunitas.",
+      "Membangun jembatan antara desain, kode, dan storytelling.",
     "hero.growth":
-      "Berbagi pengetahuan karena pertumbuhan terjadi bersama-sama.",
+      "Membagikan apa yang kupelajari saat itu juga.",
     "hero.role1": "Software Engineer",
     "hero.role2": "Product Designer",
     "hero.role3": "Content Creator",
@@ -154,33 +149,27 @@ const translations = {
     "journey.marketing": "Senior Marketing Engineer",
     "journey.design": "Senior UI Designer",
     "journey.engineering": "Software Engineer",
-    "journey.community": "Community Builder",
+    "journey.community": "Content Creator",
     "journey.marketing.subtitle": "Bisnis bertemu teknologi",
-    "journey.design.subtitle": "Bercerita melalui visual",
+    "journey.design.subtitle": "Merancang pengalaman belajar",
     "journey.engineering.subtitle": "Membangun dengan kode",
-    "journey.community.subtitle": "Berbagi perjalanan",
+    "journey.community.subtitle": "Mendokumentasikan proses belajar",
     "journey.marketing.insight":
       "Setiap kampanye butuh fondasi teknis yang solid.",
-    "journey.design.insight": "Desain adalah empati yang terlihat.",
+    "journey.design.insight":
+      "Sistem desain menjaga setiap kelas terasa dirancang dengan niat.",
     "journey.engineering.insight":
       "Kode yang berdampak jutaan dimulai dari kebutuhan satu siswa.",
     "journey.community.insight":
-      "Pertumbuhan terjadi ketika kita belajar bersama.",
+      "Membagikan progres membuat proses belajarku lebih jujur.",
     "journey.marketing.story":
       "Membangun semua landing page marketing Ruangguru, optimasi technical SEO, dan mengelola blog perusahaan. Menemukan bahwa marketing dan kode menciptakan keajaiban bersama.",
     "journey.design.story":
-      "Menemukan bahwa pixel bisa menceritakan kisah yang tidak bisa diungkapkan kata-kata.",
+      "Menggarap Brain Academy, English Academy, dan Ruangguru Live, merawat design system, serta mereview karya desainer lain.",
     "journey.engineering.story":
       "Membangun AiRIS (ai.ruangguru.com) - platform pembelajaran AI yang digunakan siswa di seluruh Indonesia. Dari konsep hingga produksi, menciptakan tools yang membuat pendidikan lebih mudah diakses.",
     "journey.community.story":
-      "Mengubah perpindahan karier menjadi konten yang membantu orang lain menavigasi perjalanan mereka.",
-    "journey.ripple": "Efek Riak",
-    "journey.tiktok": "Pengikut TikTok",
-    "journey.instagram": "Komunitas Instagram",
-    "journey.mentees": "Hidup yang Berubah",
-    "journey.tiktok.desc": "Berbagi perjalanan tech",
-    "journey.instagram.desc": "Inspirasi harian",
-    "journey.mentees.desc": "Melalui mentoring",
+      "Setiap eksperimen diubah jadi tutorial, catatan, dan konten agar orang lain bisa belajar secara real-time.",
 
     // Portfolio Section
     "portfolio.subtitle": "Karya",

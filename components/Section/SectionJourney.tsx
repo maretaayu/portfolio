@@ -18,7 +18,7 @@ function SectionJourney() {
       subtitleKey: "journey.marketing.subtitle",
       insightKey: "journey.marketing.insight",
       storyKey: "journey.marketing.story",
-      skills: ["HTML/CSS", "Technical SEO", "Landing Pages"],
+      skills: ["HTML/CSS/JS", "Technical SEO", "Landing Pages"],
       duration: "2019-2021",
     },
     {
@@ -28,7 +28,7 @@ function SectionJourney() {
       subtitleKey: "journey.design.subtitle",
       insightKey: "journey.design.insight",
       storyKey: "journey.design.story",
-      skills: ["User Research", "Prototyping", "Visual Design"],
+      skills: ["Learning Products", "Design Systems", "Design Review"],
       duration: "2021-2023",
     },
     {
@@ -48,7 +48,7 @@ function SectionJourney() {
       subtitleKey: "journey.community.subtitle",
       insightKey: "journey.community.insight",
       storyKey: "journey.community.story",
-      skills: ["Content Creation", "Mentorship", "Speaking"],
+      skills: ["Content Creation", "Knowledge Sharing", "Speaking"],
       duration: "2023-Present",
     },
   ];
@@ -97,6 +97,7 @@ function SectionJourney() {
 
   return (
     <div
+      id="journey"
       className={`min-h-screen py-20 transition-colors duration-500 ${
         isDark
           ? "bg-gradient-to-b from-gray-800 to-gray-900"
@@ -356,7 +357,7 @@ function SectionJourney() {
                       )}
                       {index === 3 && (
                         <>
-                          {/* Community building */}
+                          {/* Content sharing */}
                           <circle cx="35" cy="30" r="3" fill="none" />
                           <circle cx="65" cy="30" r="3" fill="none" />
                           <circle cx="30" cy="40" r="2" fill="none" />
@@ -419,82 +420,6 @@ function SectionJourney() {
             ))}
           </motion.div>
         </div>
-
-        {/* Impact Numbers */}
-        <motion.div
-          className="mt-32 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.5 }}
-          viewport={{ once: true }}
-        >
-          <div
-            className={`rounded-3xl p-12 transition-colors duration-500 ${
-              isDark ? "bg-gray-800 text-white" : "bg-black text-white"
-            }`}
-          >
-            <h3
-              className={`text-2xl font-light mb-8 transition-colors duration-500 ${
-                isDark ? "text-gray-200" : "text-gray-300"
-              }`}
-            >
-              {t("journey.ripple")}
-            </h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <motion.div whileHover={{ scale: 1.05 }} className="space-y-2">
-                <div className="text-4xl font-light">28K+</div>
-                <div
-                  className={`text-sm transition-colors duration-500 ${
-                    isDark ? "text-gray-300" : "text-gray-400"
-                  }`}
-                >
-                  {t("journey.tiktok")}
-                </div>
-                <div
-                  className={`text-xs transition-colors duration-500 ${
-                    isDark ? "text-gray-400" : "text-gray-500"
-                  }`}
-                >
-                  {t("journey.tiktok.desc")}
-                </div>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} className="space-y-2">
-                <div className="text-4xl font-light">15K+</div>
-                <div
-                  className={`text-sm transition-colors duration-500 ${
-                    isDark ? "text-gray-300" : "text-gray-400"
-                  }`}
-                >
-                  {t("journey.instagram")}
-                </div>
-                <div
-                  className={`text-xs transition-colors duration-500 ${
-                    isDark ? "text-gray-400" : "text-gray-500"
-                  }`}
-                >
-                  {t("journey.instagram.desc")}
-                </div>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} className="space-y-2">
-                <div className="text-4xl font-light">100+</div>
-                <div
-                  className={`text-sm transition-colors duration-500 ${
-                    isDark ? "text-gray-300" : "text-gray-400"
-                  }`}
-                >
-                  {t("journey.mentees")}
-                </div>
-                <div
-                  className={`text-xs transition-colors duration-500 ${
-                    isDark ? "text-gray-400" : "text-gray-500"
-                  }`}
-                >
-                  {t("journey.mentees.desc")}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </div>
   );
