@@ -4,18 +4,31 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "../../context/AppContext";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 type NavItem = {
-  href: string;
+  href?: string;
   labelKey: string;
+  children?: Array<{
+    labelKey: string;
+    tab: "tutorials" | "ebooks" | "collaboration";
+  }>;
 };
 
 const navItems: NavItem[] = [
   { href: "/", labelKey: "nav.home" },
   { href: "#journey", labelKey: "nav.journey" },
   { href: "#portfolio", labelKey: "nav.work" },
+  {
+    href: "#resources",
+    labelKey: "nav.resources",
+    children: [
+      { labelKey: "nav.resources.tutorials", tab: "tutorials" },
+      { labelKey: "nav.resources.ebooks", tab: "ebooks" },
+      { labelKey: "nav.resources.collaboration", tab: "collaboration" },
+    ],
+  },
   { href: "/story", labelKey: "nav.stories" },
-  { href: "#class", labelKey: "nav.speaking" },
   { href: "#contact", labelKey: "nav.contact" },
 ];
 
@@ -24,11 +37,19 @@ function Header() {
   const [activeSection, setActiveSection] = useState<string>("/");
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
+    null,
+  );
   const { language, theme, toggleLanguage, toggleTheme, t } = useApp();
 
   useEffect(() => {
+    if (router.pathname !== "/") {
+      setIsScrolled(true);
+      return;
+    }
+
     const handleScroll = () => {
-      if (router.pathname !== "/") return;
       const scrollPosition = window.scrollY;
 
       if (scrollPosition > 50) {
@@ -38,8 +59,8 @@ function Header() {
       }
 
       const sections = navItems
-        .filter((item) => item.href.startsWith("#"))
-        .map((item) => item.href.replace("#", ""));
+        .filter((item) => item.href && item.href.startsWith("#"))
+        .map((item) => (item.href ?? "").replace("#", ""));
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -91,10 +112,8 @@ function Header() {
     setActiveSection(router.pathname === "/" ? "/" : router.pathname);
   }, [router.pathname, router.asPath]);
 
-  const handleNavClick = (
-    event: MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
+  const handleNavClick = (event: MouseEvent<HTMLElement>, href?: string) => {
+    if (!href) return;
     if (href.startsWith("#")) {
       event.preventDefault();
       const targetId = href.substring(1);
@@ -130,6 +149,33 @@ function Header() {
     setIsMenuOpen(false);
   };
 
+  const navigateToResourceTab = (tab: "tutorials" | "ebooks" | "collaboration") => {
+    const targetPath = {
+      pathname: "/",
+      hash: "resources",
+      query: { tab },
+    } as const;
+
+    setActiveSection("#resources");
+    setOpenDropdown(null);
+    setOpenMobileDropdown(null);
+    setIsMenuOpen(false);
+
+    if (router.pathname === "/") {
+      void router.push(targetPath, undefined, { shallow: true });
+      const element = document.getElementById("resources");
+      if (element) {
+        const yOffset = 80;
+        const targetPosition =
+          element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+      }
+      return;
+    }
+
+    void router.push(targetPath);
+  };
+
   const isDark = theme === "dark";
 
   return (
@@ -161,24 +207,95 @@ function Header() {
 
           {/* Desktop Navigation - Hidden on mobile */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={(event) => handleNavClick(event, item.href)}
-                className={`text-sm font-light transition-all duration-300 hover:scale-105 ${
-                  activeSection === item.href
-                    ? isDark
-                      ? "text-white"
-                      : "text-black"
-                    : isDark
-                    ? "text-gray-400 hover:text-white"
-                    : "text-gray-500 hover:text-black"
-                }`}
-              >
-                {t(item.labelKey)}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              if (item.children && item.href) {
+                const isActive = activeSection === item.href;
+                const isOpen = openDropdown === item.labelKey;
+
+                return (
+                  <div
+                    key={item.labelKey}
+                    className="relative"
+                    onMouseEnter={() => setOpenDropdown(item.labelKey)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <button
+                      type="button"
+                      onClick={(event) => handleNavClick(event as any, item.href)}
+                      className={`inline-flex items-center gap-1 text-sm font-light transition-all duration-300 hover:scale-105 ${
+                        isActive
+                          ? isDark
+                            ? "text-white"
+                            : "text-black"
+                          : isDark
+                          ? "text-gray-400 hover:text-white"
+                          : "text-gray-500 hover:text-black"
+                      }`}
+                    >
+                      {t(item.labelKey)}
+                      <ChevronDownIcon
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.15 }}
+                          className={`absolute left-0 mt-3 w-48 rounded-2xl border shadow-lg backdrop-blur-xl ${
+                            isDark
+                              ? "border-gray-700 bg-gray-900/80"
+                              : "border-gray-200 bg-white/95"
+                          }`}
+                        >
+                          <ul className="py-3">
+                            {item.children.map((child) => (
+                              <li key={child.tab}>
+                                <button
+                                  type="button"
+                                  onClick={() => navigateToResourceTab(child.tab)}
+                                  className={`w-full px-4 py-2 text-left text-sm font-light transition-colors duration-200 ${
+                                    isDark
+                                      ? "text-gray-300 hover:bg-gray-800 hover:text-white"
+                                      : "text-gray-600 hover:bg-gray-100 hover:text-black"
+                                  }`}
+                                >
+                                  {t(child.labelKey)}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.href ?? item.labelKey}
+                  href={item.href ?? "/"}
+                  onClick={(event) => handleNavClick(event, item.href)}
+                  className={`text-sm font-light transition-all duration-300 hover:scale-105 ${
+                    activeSection === item.href
+                      ? isDark
+                        ? "text-white"
+                        : "text-black"
+                      : isDark
+                      ? "text-gray-400 hover:text-white"
+                      : "text-gray-500 hover:text-black"
+                  }`}
+                >
+                  {t(item.labelKey)}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Controls */}
@@ -304,29 +421,88 @@ function Header() {
                     : "border-gray-200 bg-white backdrop-blur-md"
                 }`}
               >
-                <div className="flex flex-col space-y-6 px-2">
+                <div className="flex flex-col space-y-4 px-2">
                   {navItems.map((item, index) => (
                     <motion.div
-                      key={item.href}
+                      key={item.labelKey}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
+                      transition={{ delay: index * 0.08 }}
+                      className="space-y-2"
                     >
-                      <Link
-                        href={item.href}
-                        onClick={(event) => handleNavClick(event, item.href)}
-                        className={`block text-base font-light py-2 px-4 rounded-lg transition-all duration-300 ${
-                          activeSection === item.href
-                            ? isDark
-                              ? "text-white bg-gray-700"
-                              : "text-black bg-gray-100"
-                            : isDark
-                            ? "text-gray-300 hover:text-white hover:bg-gray-700"
-                            : "text-gray-600 hover:text-black hover:bg-gray-100"
-                        }`}
-                      >
-                        {t(item.labelKey)}
-                      </Link>
+                      {item.children && item.href ? (
+                        <div>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setOpenMobileDropdown((current) =>
+                                current === item.labelKey ? null : item.labelKey,
+                              )
+                            }
+                            className={`flex w-full items-center justify-between rounded-lg py-2 px-4 text-base font-light transition-all duration-300 ${
+                              activeSection === item.href
+                                ? isDark
+                                  ? "text-white bg-gray-700"
+                                  : "text-black bg-gray-100"
+                                : isDark
+                                ? "text-gray-300 hover:text-white hover:bg-gray-700"
+                                : "text-gray-600 hover:text-black hover:bg-gray-100"
+                            }`}
+                          >
+                            {t(item.labelKey)}
+                            <ChevronDownIcon
+                              className={`h-5 w-5 transition-transform duration-200 ${
+                                openMobileDropdown === item.labelKey
+                                  ? "rotate-180"
+                                  : ""
+                              }`}
+                            />
+                          </button>
+                          <AnimatePresence>
+                            {openMobileDropdown === item.labelKey && (
+                              <motion.ul
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="ml-4 mt-2 space-y-2 border-l border-dashed border-gray-500/30 pl-4"
+                              >
+                                {item.children.map((child) => (
+                                  <li key={child.tab}>
+                                    <button
+                                      type="button"
+                                      onClick={() => navigateToResourceTab(child.tab)}
+                                      className={`w-full rounded-lg py-2 px-2 text-sm font-light text-left transition-colors duration-200 ${
+                                        isDark
+                                          ? "text-gray-400 hover:text-white hover:bg-gray-800"
+                                          : "text-gray-600 hover:text-black hover:bg-gray-100"
+                                      }`}
+                                    >
+                                      {t(child.labelKey)}
+                                    </button>
+                                  </li>
+                                ))}
+                              </motion.ul>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href ?? "/"}
+                          onClick={(event) => handleNavClick(event, item.href)}
+                          className={`block rounded-lg py-2 px-4 text-base font-light transition-all duration-300 ${
+                            activeSection === item.href
+                              ? isDark
+                                ? "text-white bg-gray-700"
+                                : "text-black bg-gray-100"
+                              : isDark
+                              ? "text-gray-300 hover:text-white hover:bg-gray-700"
+                              : "text-gray-600 hover:text-black hover:bg-gray-100"
+                          }`}
+                        >
+                          {t(item.labelKey)}
+                        </Link>
+                      )}
                     </motion.div>
                   ))}
                 </div>

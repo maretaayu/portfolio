@@ -3,9 +3,9 @@ import { GetServerSideProps } from "next";
 import { Layout, Hero } from "../components";
 import { SectionJourney } from "../components/Section/SectionJourney";
 import { PortfolioContainer } from "../components/Portfolio/PortfolioContainer";
-import { LearnContainer } from "../components/Learn/LearnContainer";
 import { LatestStories } from "../components/Blog/LatestStories";
 import { SectionContact } from "../components/Section/SectionContact";
+import { ResourcesSection } from "../components/Resources";
 import { BlogPost } from "../types/blog";
 import { serverBlogService } from "../services/serverBlogService";
 
@@ -29,7 +29,7 @@ export default function Page({ latestPosts }: HomePageProps) {
       <SectionJourney />
       <PortfolioContainer />
       <LatestStories posts={latestPosts} />
-      <LearnContainer />
+      <ResourcesSection />
       <SectionContact />
     </Layout>
   );

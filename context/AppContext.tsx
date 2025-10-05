@@ -31,8 +31,11 @@ const translations = {
     "nav.home": "Home",
     "nav.journey": "Journey",
     "nav.work": "Work",
+    "nav.resources": "Resources",
+    "nav.resources.tutorials": "Tutorials",
+    "nav.resources.ebooks": "E-books",
+    "nav.resources.collaboration": "Collaboration",
     "nav.stories": "Stories",
-    "nav.speaking": "Tutorials",
     "nav.contact": "Contact",
 
     // Hero Section
@@ -104,6 +107,53 @@ const translations = {
     "learn.item3.desc":
       "Great for quickly building responsive websites using the powerful Bootstrap framework.",
 
+    // Ebook Section
+    "ebook.subtitle": "Digital products",
+    "ebook.title": "Build and Ship Web Products with Confidence",
+    "ebook.description":
+      "Collection of digital playbooks exploring frontend engineering, design systems, workflow automation, and other topics I'm currently documenting.",
+    "ebook.featuresTitle": "You'll unlock",
+    "ebook.bonusTitle": "Bonus files",
+    "ebook.highlightLabel": "Best for",
+    "ebook.oneTimePurchase": "One-time purchase",
+    "ebook.checkoutNote": "Instant download. Secure checkout via Mayar.",
+
+    "ebook.items.frontend.badge": "Fresh drop",
+    "ebook.items.frontend.title": "Fullstack Design & Development Playbook",
+    "ebook.items.frontend.description":
+      "Practical handbook covering HTML, CSS, JavaScript, React, responsive design, backend integration, Git, and UI/UX fundamentals.",
+    "ebook.items.frontend.highlight":
+      "Design-forward builders and career switchers who want a clear roadmap from layout to production-ready app.",
+    "ebook.items.frontend.price": "IDR 35K",
+    "ebook.items.frontend.cta": "Buy on Mayar - IDR 35K",
+    "ebook.items.frontend.secondaryCta": "Ask a question",
+    "ebook.items.frontend.features.0":
+      "HTML, CSS, and JavaScript fundamentals broken down with hands-on exercises and best practices.",
+    "ebook.items.frontend.features.1":
+      "React.js essentials: Virtual DOM, JSX, components, props, state, list rendering, and spinning up projects with Vite.",
+    "ebook.items.frontend.features.2":
+      "Responsive layouts with Tailwind CSS plus backend integration using Fetch or Axios and resilient error handling.",
+    "ebook.items.frontend.bonuses.0":
+      "Git workflow cheatsheet from init to deploying a project with Vercel.",
+    "ebook.items.frontend.bonuses.1":
+      "Figma Auto Layout templates, UI kit starter, and high-fidelity design tips for consistent UI/UX.",
+
+    // Resources Section
+    "resources.badge": "Resources",
+    "resources.title": "Learn, download, or team up",
+    "resources.description":
+      "Collection of digital playbooks exploring frontend engineering, design systems, workflow automation, and other topics I'm currently documenting.",
+    "resources.tabs.tutorials.badge": "YouTube",
+    "resources.tabs.tutorials.cta": "Watch tutorial",
+    "resources.collaboration.mentoring.title": "Mentoring & code reviews",
+    "resources.collaboration.mentoring.desc":
+      "One-on-one sessions to unblock projects, refine portfolios, or plan a learning roadmap together.",
+    "resources.collaboration.mentoring.cta": "Request mentoring",
+    "resources.collaboration.speaking.title": "Workshops & collaborations",
+    "resources.collaboration.speaking.desc":
+      "Invite me to guest speak, co-host live sessions, or partner on community classes and events.",
+    "resources.collaboration.speaking.cta": "Discuss an event",
+
     // Contact Section
     "contact.title": "Contact",
     "contact.description":
@@ -121,8 +171,11 @@ const translations = {
     "nav.home": "Beranda",
     "nav.journey": "Perjalanan",
     "nav.work": "Karya",
+    "nav.resources": "Resource",
+    "nav.resources.tutorials": "Tutorial",
+    "nav.resources.ebooks": "E-book",
+    "nav.resources.collaboration": "Kolaborasi",
     "nav.stories": "Cerita",
-    "nav.speaking": "Tutorial",
     "nav.contact": "Kontak",
 
     // Hero Section
@@ -195,6 +248,53 @@ const translations = {
     "learn.item3.title": "Slicing Landing Page Personal Website - Bootstrap",
     "learn.item3.desc":
       "Bagus untuk membangun website responsif dengan cepat menggunakan framework Bootstrap yang powerful.",
+
+    // Ebook Section
+    "ebook.subtitle": "Produk digital",
+    "ebook.title": "Bangun & Rilis Produk Web dengan Pede",
+    "ebook.description":
+      "Kumpulan playbook digital yang membahas frontend engineering, sistem desain, automasi workflow, dan topik lain yang sedang kudokumentasikan.",
+    "ebook.featuresTitle": "Yang akan kamu kuasai",
+    "ebook.bonusTitle": "Bonus file",
+    "ebook.highlightLabel": "Paling cocok untuk",
+    "ebook.oneTimePurchase": "Bayar sekali",
+    "ebook.checkoutNote": "Unduh langsung. Pembayaran aman lewat Mayar.",
+
+    "ebook.items.frontend.badge": "Baru rilis",
+    "ebook.items.frontend.title": "Fullstack Design & Development Playbook",
+    "ebook.items.frontend.description":
+      "Buku praktis yang mengulas HTML, CSS, JavaScript, React, desain responsif, integrasi backend, Git, dan dasar UI/UX.",
+    "ebook.items.frontend.highlight":
+      "Pembelajar berlatar desain atau pemula serius yang butuh roadmap jelas dari wireframe sampai aplikasi siap rilis.",
+    "ebook.items.frontend.price": "IDR 35K",
+    "ebook.items.frontend.cta": "Beli di Mayar - IDR 35K",
+    "ebook.items.frontend.secondaryCta": "Tanya dulu",
+    "ebook.items.frontend.features.0":
+      "Fundamental HTML, CSS, dan JavaScript yang dipecah dalam latihan praktis dan best practice terstruktur.",
+    "ebook.items.frontend.features.1":
+      "Inti React.js: Virtual DOM, JSX, komponen, props, state, list rendering, plus cara mulai proyek dengan Vite.",
+    "ebook.items.frontend.features.2":
+      "Desain responsif dengan Tailwind CSS serta integrasi backend memakai Fetch atau Axios lengkap dengan error handling.",
+    "ebook.items.frontend.bonuses.0":
+      "Cheatsheet alur kerja Git dari git init sampai deploy proyek ke Vercel.",
+    "ebook.items.frontend.bonuses.1":
+      "Template Figma Auto Layout, starter UI kit, dan tips desain high fidelity agar UI/UX tetap konsisten.",
+
+    // Resources Section
+    "resources.badge": "Resource",
+    "resources.title": "Belajar, unduh, atau berkolaborasi",
+    "resources.description":
+      "Kumpulan playbook digital yang membahas frontend engineering, sistem desain, automasi workflow, dan topik lain yang sedang kudokumentasikan.",
+    "resources.tabs.tutorials.badge": "YouTube",
+    "resources.tabs.tutorials.cta": "Tonton tutorial",
+    "resources.collaboration.mentoring.title": "Mentoring & code review",
+    "resources.collaboration.mentoring.desc":
+      "Sesi satu-satu untuk bantu ngerapiin proyek, portofolio, atau bikin rencana belajar yang realistis.",
+    "resources.collaboration.mentoring.cta": "Ajukan mentoring",
+    "resources.collaboration.speaking.title": "Workshop & kolaborasi",
+    "resources.collaboration.speaking.desc":
+      "Ajak aku jadi speaker, co-host kelas live, atau kolaborasi bareng komunitasmu.",
+    "resources.collaboration.speaking.cta": "Diskusi acara",
 
     // Contact Section
     "contact.title": "Kontak",
