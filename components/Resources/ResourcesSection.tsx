@@ -70,7 +70,7 @@ export function ResourcesSection() {
         thumbnail: "https://img.youtube.com/vi/-2kg-8ns8oE/hqdefault.jpg",
       },
     ],
-    [t],
+    [t]
   );
 
   const ebooks = useMemo(() => createEbookItems(t), [t]);
@@ -90,7 +90,7 @@ export function ResourcesSection() {
         href: "mailto:maretacodes@gmail.com?subject=Speaking%20Collaboration",
       },
     ],
-    [t],
+    [t]
   );
 
   useEffect(() => {
@@ -121,7 +121,7 @@ export function ResourcesSection() {
         hash: "resources",
       },
       undefined,
-      { shallow: true },
+      { shallow: true }
     );
   };
 
@@ -166,7 +166,9 @@ export function ResourcesSection() {
         <div className="mt-12">
           <div
             className={`inline-flex rounded-full border p-1 text-sm transition-colors duration-300 ${
-              isDark ? "border-gray-800 bg-gray-900/70" : "border-gray-200 bg-gray-100"
+              isDark
+                ? "border-gray-800 bg-gray-900/70"
+                : "border-gray-200 bg-gray-100"
             }`}
           >
             {TAB_ORDER.map((tab) => {
@@ -179,8 +181,8 @@ export function ResourcesSection() {
                   className={`relative rounded-full px-4 py-2 font-light transition-all duration-200 ${
                     isActive
                       ? isDark
-                        ? "bg-white text-gray-900 shadow"
-                        : "bg-white text-gray-900 shadow"
+                        ? "bg-gray-light text-gray-dark shadow"
+                        : "bg-gray-dark text-gray-light shadow"
                       : isDark
                       ? "text-gray-400 hover:text-white"
                       : "text-gray-500 hover:text-black"
@@ -201,53 +203,44 @@ export function ResourcesSection() {
                   initial="hidden"
                   animate="visible"
                   exit="hidden"
-                  className="space-y-10"
+                  className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
                 >
                   {tutorials.map((item) => (
                     <motion.article
                       key={item.url}
                       variants={listItemVariants}
-                      className={`grid gap-6 rounded-3xl border p-6 md:grid-cols-[auto_1fr] md:items-center transition-colors duration-300 ${
+                      className={`flex flex-col rounded-3xl border p-6 transition-colors duration-300 ${
                         isDark
                           ? "border-gray-800 bg-gray-900/60 hover:border-gray-700"
                           : "border-gray-200 bg-white hover:border-gray-300"
                       }`}
                     >
-                      <div className="flex justify-center md:justify-start">
+                      <div className="mb-4">
                         <Image
                           src={item.thumbnail}
                           alt={item.title}
                           width={tutorialThumbnailSize}
                           height={tutorialThumbnailSize * 0.5625}
-                          className="h-32 w-56 rounded-2xl object-cover shadow-md"
-                          sizes="(min-width: 768px) 14rem, 100vw"
+                          className="h-32 w-full rounded-2xl object-cover shadow-md"
+                          sizes="(min-width: 1024px) 20rem, (min-width: 640px) 25rem, 100vw"
                         />
                       </div>
-                      <div className="space-y-3">
-                        <span
-                          className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.3em] transition-colors duration-300 ${
-                            isDark
-                              ? "bg-gray-800 text-gray-300"
-                              : "bg-gray-100 text-gray-600"
-                          }`}
-                        >
-                          {t("resources.tabs.tutorials.badge")}
-                        </span>
+                      <div className="flex flex-col space-y-3 flex-1">
                         <h3
-                          className={`text-xl font-light transition-colors duration-300 ${
+                          className={`text-lg font-light transition-colors duration-300 ${
                             isDark ? "text-white" : "text-gray-900"
                           }`}
                         >
                           {item.title}
                         </h3>
                         <p
-                          className={`text-sm font-light leading-relaxed transition-colors duration-300 ${
+                          className={`text-sm font-light leading-relaxed transition-colors duration-300 flex-1 ${
                             isDark ? "text-gray-300" : "text-gray-600"
                           }`}
                         >
                           {item.description}
                         </p>
-                        <div className="flex flex-wrap gap-3">
+                        <div className="mt-auto">
                           <a
                             href={item.url}
                             target="_blank"
