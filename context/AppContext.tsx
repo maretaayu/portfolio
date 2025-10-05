@@ -153,6 +153,10 @@ const translations = {
     "resources.collaboration.speaking.desc":
       "Invite me to guest speak, co-host live sessions, or partner on community classes and events.",
     "resources.collaboration.speaking.cta": "Discuss an event",
+    "resources.collaboration.projects.title": "Project-based services",
+    "resources.collaboration.projects.desc":
+      "End-to-end product development consulting from design to frontend implementation for your business needs.",
+    "resources.collaboration.projects.cta": "Discuss a project",
 
     // Contact Section
     "contact.title": "Contact",
@@ -295,6 +299,10 @@ const translations = {
     "resources.collaboration.speaking.desc":
       "Ajak aku jadi speaker, co-host kelas live, atau kolaborasi bareng komunitasmu.",
     "resources.collaboration.speaking.cta": "Diskusi acara",
+    "resources.collaboration.projects.title": "Project-based services",
+    "resources.collaboration.projects.desc":
+      "Konsultasi product development end-to-end dari desain hingga implementasi frontend untuk kebutuhan bisnis.",
+    "resources.collaboration.projects.cta": "Diskusi proyek",
 
     // Contact Section
     "contact.title": "Kontak",

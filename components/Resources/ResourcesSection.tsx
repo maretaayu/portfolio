@@ -89,6 +89,12 @@ export function ResourcesSection() {
         ctaLabel: t("resources.collaboration.speaking.cta"),
         href: "mailto:maretacodes@gmail.com?subject=Speaking%20Collaboration",
       },
+      {
+        title: t("resources.collaboration.projects.title"),
+        description: t("resources.collaboration.projects.desc"),
+        ctaLabel: t("resources.collaboration.projects.cta"),
+        href: "mailto:maretacodes@gmail.com?subject=Project%20Based%20Work%20Inquiry",
+      },
     ],
     [t]
   );
@@ -287,7 +293,7 @@ export function ResourcesSection() {
                   initial="hidden"
                   animate="visible"
                   exit="hidden"
-                  className="grid gap-6 md:grid-cols-2"
+                  className="grid gap-6 md:grid-cols-3"
                 >
                   {collaboration.map((item) => (
                     <motion.div
