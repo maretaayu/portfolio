@@ -1,19 +1,11 @@
 import Head from "next/head";
-import { GetServerSideProps } from "next";
 import { Layout, Hero } from "../components";
 import { SectionJourney } from "../components/Section/SectionJourney";
 import { PortfolioContainer } from "../components/Portfolio/PortfolioContainer";
-import { LatestStories } from "../components/Blog/LatestStories";
-import { SectionContact } from "../components/Section/SectionContact";
+import { CollaborationSection } from "../components/Collaboration/CollaborationSection";
 import { ResourcesSection } from "../components/Resources";
-import { BlogPost } from "../types/blog";
-import { serverBlogService } from "../services/serverBlogService";
 
-interface HomePageProps {
-  latestPosts: BlogPost[];
-}
-
-export default function Page({ latestPosts }: HomePageProps) {
+export default function Page() {
   return (
     <Layout pageTitle="Homepage">
       <Head>
@@ -28,29 +20,9 @@ export default function Page({ latestPosts }: HomePageProps) {
       <Hero />
       <SectionJourney />
       <PortfolioContainer />
-      <LatestStories posts={latestPosts} />
       <ResourcesSection />
-      <SectionContact />
+      <CollaborationSection />
     </Layout>
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const allPosts = await serverBlogService.getAllPosts();
-    const latestPosts = allPosts.slice(0, 3);
-
-    return {
-      props: {
-        latestPosts,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching latest posts:", error);
-    return {
-      props: {
-        latestPosts: [],
-      },
-    };
-  }
-};

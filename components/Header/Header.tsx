@@ -25,11 +25,10 @@ const navItems: NavItem[] = [
     children: [
       { labelKey: "nav.resources.tutorials", tab: "tutorials" },
       { labelKey: "nav.resources.ebooks", tab: "ebooks" },
-      { labelKey: "nav.resources.collaboration", tab: "collaboration" },
     ],
   },
+  { href: "#collaboration", labelKey: "nav.collaboration" },
   { href: "/story", labelKey: "nav.stories" },
-  { href: "#contact", labelKey: "nav.contact" },
 ];
 
 function Header() {

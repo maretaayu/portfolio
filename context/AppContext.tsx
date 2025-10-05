@@ -34,9 +34,8 @@ const translations = {
     "nav.resources": "Resources",
     "nav.resources.tutorials": "Tutorials",
     "nav.resources.ebooks": "E-books",
-    "nav.resources.collaboration": "Collaboration",
     "nav.stories": "Stories",
-    "nav.contact": "Contact",
+    "nav.collaboration": "Collaboration",
 
     // Hero Section
     "hero.tagline": "Transforming Through Change",
@@ -140,9 +139,9 @@ const translations = {
 
     // Resources Section
     "resources.badge": "Resources",
-    "resources.title": "Learn, download, or team up",
+    "resources.title": "Learn or team up",
     "resources.description":
-      "Collection of digital playbooks exploring frontend engineering, design systems, workflow automation, and other topics I'm currently documenting.",
+      "Tutorials and e-books to grow your skills in frontend engineering and design.",
     "resources.tabs.tutorials.badge": "YouTube",
     "resources.tabs.tutorials.cta": "Watch tutorial",
     "resources.collaboration.mentoring.title": "Mentoring & code reviews",
@@ -157,6 +156,12 @@ const translations = {
     "resources.collaboration.projects.desc":
       "End-to-end product development consulting from design to frontend implementation for your business needs.",
     "resources.collaboration.projects.cta": "Discuss a project",
+
+    // Collaboration Section
+    "collaboration.badge": "Collaboration",
+    "collaboration.title": "Let's work together",
+    "collaboration.description":
+      "Ready to collaborate? Choose how we can work together to bring your ideas to life.",
 
     // Contact Section
     "contact.title": "Contact",
@@ -178,9 +183,8 @@ const translations = {
     "nav.resources": "Resource",
     "nav.resources.tutorials": "Tutorial",
     "nav.resources.ebooks": "E-book",
-    "nav.resources.collaboration": "Kolaborasi",
     "nav.stories": "Cerita",
-    "nav.contact": "Kontak",
+    "nav.collaboration": "Kolaborasi",
 
     // Hero Section
     "hero.tagline": "Bertransformasi Melalui Perubahan",
@@ -286,9 +290,9 @@ const translations = {
 
     // Resources Section
     "resources.badge": "Resource",
-    "resources.title": "Belajar, unduh, atau berkolaborasi",
+    "resources.title": "Belajar atau berkolaborasi",
     "resources.description":
-      "Kumpulan playbook digital yang membahas frontend engineering, sistem desain, automasi workflow, dan topik lain yang sedang kudokumentasikan.",
+      "Tutorial dan e-book untuk mengembangkan skill di bidang frontend engineering dan desain.",
     "resources.tabs.tutorials.badge": "YouTube",
     "resources.tabs.tutorials.cta": "Tonton tutorial",
     "resources.collaboration.mentoring.title": "Mentoring & code review",
@@ -303,6 +307,12 @@ const translations = {
     "resources.collaboration.projects.desc":
       "Konsultasi product development end-to-end dari desain hingga implementasi frontend untuk kebutuhan bisnis.",
     "resources.collaboration.projects.cta": "Diskusi proyek",
+
+    // Collaboration Section
+    "collaboration.badge": "Kolaborasi",
+    "collaboration.title": "Mari berkolaborasi",
+    "collaboration.description":
+      "Siap berkolaborasi? Pilih cara kita bisa bekerja sama untuk mewujudkan ide-idemu.",
 
     // Contact Section
     "contact.title": "Kontak",

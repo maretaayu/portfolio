@@ -8,7 +8,7 @@ import { useApp } from "../../context/AppContext";
 import { createEbookItems } from "../Ebook/ebookData";
 import { EbookCard } from "../Ebook/EbookCard";
 
-const TAB_ORDER = ["tutorials", "ebooks", "collaboration"] as const;
+const TAB_ORDER = ["tutorials", "ebooks"] as const;
 
 type TabId = (typeof TAB_ORDER)[number];
 
@@ -75,29 +75,6 @@ export function ResourcesSection() {
 
   const ebooks = useMemo(() => createEbookItems(t), [t]);
 
-  const collaboration = useMemo(
-    () => [
-      {
-        title: t("resources.collaboration.mentoring.title"),
-        description: t("resources.collaboration.mentoring.desc"),
-        ctaLabel: t("resources.collaboration.mentoring.cta"),
-        href: "mailto:maretacodes@gmail.com?subject=Mentoring%20Inquiry",
-      },
-      {
-        title: t("resources.collaboration.speaking.title"),
-        description: t("resources.collaboration.speaking.desc"),
-        ctaLabel: t("resources.collaboration.speaking.cta"),
-        href: "mailto:maretacodes@gmail.com?subject=Speaking%20Collaboration",
-      },
-      {
-        title: t("resources.collaboration.projects.title"),
-        description: t("resources.collaboration.projects.desc"),
-        ctaLabel: t("resources.collaboration.projects.cta"),
-        href: "mailto:maretacodes@gmail.com?subject=Project%20Based%20Work%20Inquiry",
-      },
-    ],
-    [t]
-  );
 
   useEffect(() => {
     const tab = Array.isArray(router.query.tab)
@@ -286,57 +263,6 @@ export function ResourcesSection() {
                 </motion.div>
               )}
 
-              {activeTab === "collaboration" && (
-                <motion.div
-                  key="collaboration"
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  className="grid gap-6 md:grid-cols-3"
-                >
-                  {collaboration.map((item) => (
-                    <motion.div
-                      key={item.title}
-                      variants={listItemVariants}
-                      className={`flex h-full flex-col justify-between rounded-3xl border p-6 transition-colors duration-300 ${
-                        isDark
-                          ? "border-gray-800 bg-gray-900/60 hover:border-gray-700"
-                          : "border-gray-200 bg-white hover:border-gray-300"
-                      }`}
-                    >
-                      <div className="space-y-3">
-                        <h3
-                          className={`text-xl font-light transition-colors duration-300 ${
-                            isDark ? "text-white" : "text-gray-900"
-                          }`}
-                        >
-                          {item.title}
-                        </h3>
-                        <p
-                          className={`text-sm font-light leading-relaxed transition-colors duration-300 ${
-                            isDark ? "text-gray-300" : "text-gray-600"
-                          }`}
-                        >
-                          {item.description}
-                        </p>
-                      </div>
-                      <div className="mt-6">
-                        <a
-                          href={item.href}
-                          className={`inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-colors duration-200 ${
-                            isDark
-                              ? "border border-gray-700 text-gray-200 hover:border-gray-500"
-                              : "border border-gray-300 text-gray-700 hover:border-gray-500"
-                          }`}
-                        >
-                          {item.ctaLabel}
-                        </a>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
             </AnimatePresence>
           </div>
         </div>
